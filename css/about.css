@@ -1,36 +1,22 @@
+/* about.css - 专用于“关于我们”页面的样式 */
+
 .about-hero-section {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    margin-top: -80px; /* Adjust based on header height */
+    /* “关于我们”页面的英雄区域样式：蓝色背景，白色文本，居中对齐，大内边距，并调整顶部外边距以适应固定头部。 */
+    background-color: #007bff; /* 蓝色背景 */
+    color: white; /* 白色文本 */
+    text-align: center; /* 文本居中对齐 */
+    padding: 100px 20px; /* 上下内边距 100px，左右 20px */
+    margin-top: -80px; /* 调整顶部外边距，以防止内容被固定头部隐藏 */
 }
 
 .about-hero-title {
-    font-size: 3em;
-    margin-bottom: 10px;
+    /* “关于我们”英雄区域标题样式：设置字体大小和底部外边距。 */
+    font-size: 3em; /* 字体大小 3em */
+    margin-bottom: 10px; /* 底部外边距 10px */
 }
 
 .about-hero-subtitle {
-    font-size: 1.2em;
-    opacity: 0.8;
-}
-
-.section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.section-description {
-    font-size: 1.1em;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+    /* “关于我们”英雄区域副标题样式：设置字体大小和透明度。 */
+    font-size: 1.2em; /* 字体大小 1.2em */
+    opacity: 0.8; /* 透明度 0.8 */
 } 

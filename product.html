@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="contactPageTitle">联系我们 - 深圳市日不落灯光</title>
+    <title data-lang-key="pageTitle">深圳市日不落灯光</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/product.css"> <!-- 假设我们会有一个 product.css -->
 </head>
 <body>
     <header>
-        <nav>   
+        <nav>
             <div class="logo" data-lang-key="logoText">深圳市日不落灯光</div>
             <ul>
-                <li><a href="index.html#home" data-lang-key="navHome">主页</a></li>
+                <li><a href="index.html">主页</a></li>
                 <li class="dropdown">
                     <a href="product.html" class="dropbtn" data-lang-key="navProducts">产品</a>
                     <div class="dropdown-content">
@@ -72,9 +72,9 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="about.html" data-lang-key="navAbout">关于我们</a></li>
-                <li><a href="contact.html" data-lang-key="navContact">联系我们</a></li>
-                <li><a href="product-cases.html" data-lang-key="navProductCases">产品案例</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+                <li><a href="product-cases.html">产品案例</a></li>
             </ul>
             <div class="language-switcher">
                 <span data-lang-key="languageDisplay">语言: 中文 | English</span>
@@ -95,87 +95,69 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="cards-container">
-            <div class="contact-card contact-card-info">
-                <h3>Shenzhen  Lighting Co., Ltd.</h3>
-                <h4> Lighting (HK) Co., Ltd.</h4>
-                <p><strong>地址:</strong> </p>
-                <p><strong>电话:</strong> +86-755-123456</p>
-                <p><strong>传真:</strong> +86-755-123456</p>
-                <p><strong>电子邮件:</strong> sales@ledyi.com</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon youtube"></a>
-                    <a href="#" class="social-icon facebook"></a>
-                    <a href="#" class="social-icon instagram"></a>
-                    <a href="#" class="social-icon twitter"></a>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>产品</h1>
+                <p>我们有 2000 多个模型，每个月都会开发 3-5 个新模型。</p>
             </div>
-            <div class="contact-card contact-card-form">
-                <h3>询价</h3>
-                <form action="#" method="POST" class="inquiry-form">
-                    <div class="form-group">
-                        <label for="inquiry-name">*您的姓名</label>
-                        <input type="text" id="inquiry-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiry-email">*您的电子邮件地址</label>
-                        <input type="email" id="inquiry-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiry-message">消息</label>
-                        <textarea id="inquiry-message" name="message" rows="5"></textarea>
-                    </div>
-                    <div class="form-group file-upload-group">
-                        <label class="file-upload-label" for="file-upload">
-                            <img src="image/信封.png" alt="Upload icon" class="upload-icon">
-                            <span>单击或拖动文件到此区域以上传它。</span>
-                            <span class="file-upload-note">您最多可以上传 10 个文件。</span>
-                        </label>
-                        <input type="file" id="file-upload" name="files[]" multiple accept=".pdf,.doc,.docx,.jpg,.png" style="display: none;">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="submit-button">询价</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- The existing contact-page section will be removed or commented out if it's no longer needed,
-             as its content is now integrated into the new card structure. -->
-        <!-- The original section had contact info and form, which are now in the cards. -->
-        <section id="contact-page" class="section" style="display:none;">
-            <h2 data-lang-key="contactTitle">联系渠道</h2>
-            <p data-lang-key="contactIntroText">如果您有任何疑问或需要帮助，请随时联系我们。</p>
-            <div class="contact-info">
-                <p data-lang-key="emailText">邮箱：your_email@example.com</p>
-                <p data-lang-key="phoneText">电话：+86 XXXX-XXXXXXX</p>
-                <p data-lang-key="addressText">地址：公司地址</p>
-            </div>
-            
-            <h3 data-lang-key="contactFormTitle">发送消息给我们</h3>
-            <form action="#" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name" data-lang-key="formNameLabel">姓名 *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-lang-key="formEmailLabel">电子邮件 *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject" data-lang-key="formSubjectLabel">主题</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-                <div class="form-group">
-                    <label for="message" data-lang-key="formMessageLabel">留言 *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="submit-button" data-lang-key="formSubmitButton">发送消息</button>
-                </div>
-            </form>
         </section>
-    </div>
+
+        <section class="product-category">
+            <div class="container">
+                <h2>LED灯</h2>
+                <div class="product-items">
+                    <h3>LED灯带</h3>
+                    <div class="image-gallery">
+                        <img src="image/790dc3da8ce469e192.jpg" alt="LED灯带图片1">
+                        <img src="image/a5c029a67ed77b99f4.jpg" alt="LED灯带图片2">
+                        <img src="image/IMG_20240825_094406.jpg" alt="LED灯带图片3">
+                        <img src="image/信封.png" alt="LED灯带图片4">
+                    </div>
+                    <p>这里是关于LED灯带的描述。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category">
+            <div class="container">
+                <h2>柔性霓虹灯</h2>
+                <div class="product-items">
+                    <div class="image-gallery">
+                        <img src="image/placeholder.jpg" alt="柔性霓虹灯图片1"> <!-- 占位符图片 -->
+                        <img src="image/placeholder.jpg" alt="柔性霓虹灯图片2"> <!-- 占位符图片 -->
+                    </div>
+                    <p>柔性霓虹灯是一种新型的LED装饰灯，具有节能、寿命长、可弯曲、易安装等特点，广泛应用于广告招牌、建筑轮廓、室内外装饰等领域。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category">
+            <div class="container">
+                <h2>LED控制器</h2>
+                <div class="product-items">
+                    <div class="image-gallery">
+                        <img src="image/placeholder.jpg" alt="LED控制器图片1"> <!-- 占位符图片 -->
+                        <img src="image/placeholder.jpg" alt="LED控制器图片2"> <!-- 占位符图片 -->
+                    </div>
+                    <p>LED控制器用于控制LED灯的颜色、亮度、模式等参数，可实现多种灯光效果。我们提供DMX、SPI、DALI等多种协议的控制器。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category">
+            <div class="container">
+                <h2>LED驱动器</h2>
+                <div class="product-items">
+                    <div class="image-gallery">
+                        <img src="image/placeholder.jpg" alt="LED驱动器图片1"> <!-- 占位符图片 -->
+                        <img src="image/placeholder.jpg" alt="LED驱动器图片2"> <!-- 占位符图片 -->
+                    </div>
+                    <p>LED驱动器是为LED灯提供稳定电流和电压的电源设备，确保LED灯的正常工作和延长使用寿命。我们提供恒流、恒压等多种类型的驱动器。</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="main-footer">
         <div class="footer-content">
@@ -186,11 +168,10 @@
                 <p>LED 以实惠的价格和快速的交货提供定制的 LED 灯条。提供免费样品。</p>
                 <ul>
                     <li>电子邮件：</li>
-                    <li>电话：+86 - </li>
+                    <li>电话：+86 --</li>
                     <li>地址：</li>
                 </ul>
                 <div class="social-icons">
-                    
                     <a href="#" class="social-icon"><img src="image/youtube.png" alt="YouTube"></a>
                     <a href="#" class="social-icon"><img src="image/脸书-copy.png" alt="Facebook"></a>
                     <a href="#" class="social-icon"><img src="image/twiter.png" alt="Twitter"></a>
@@ -244,7 +225,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <div id="app"></div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </body>
-</html> 
+</html>

@@ -1,0 +1,171 @@
+.product-detail-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-hero-text {
+    flex: 1;
+}
+
+.product-hero-text h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.feature-list li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.check-icon {
+    color: #4CAF50;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.product-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.supplier-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.supplier-info h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.supplier-info p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .product-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-hero-text h1,
+    .supplier-info h2 {
+        font-size: 2em;
+    }
+
+    .feature-list li,
+    .supplier-info p {
+        font-size: 1em;
+    }
+}
+
+.application-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.application-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.application-intro {
+    font-size: 1.1em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.application-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.application-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.triangle-icon {
+    color: #4CAF50; /* A green color for the triangle */
+    margin-right: 8px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+.application-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .application-section h2 {
+        font-size: 2em;
+    }
+
+    .application-intro {
+        font-size: 1em;
+    }
+
+    .application-item h3 {
+        font-size: 1.3em;
+    }
+
+    .application-item p {
+        font-size: 0.95em;
+    }
+} 

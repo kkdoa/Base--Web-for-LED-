@@ -27,6 +27,31 @@ header {
     transition: background-color 0.3s ease; /* 背景颜色平滑过渡 */
 }
 
+.floating-action-button {
+    position: fixed;
+    bottom: 90px; /* 调整此值以避免与快速定制按钮重叠，或根据图片红色方框调整 */
+    right: 30px;
+    background-color: #007bff; /* 蓝色按钮 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 999; /* 确保它位于快速定制按钮之下，但仍在顶部 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-action-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.floating-action-button .arrow-icon {
+    margin-left: 8px;
+}
+
 .scrolled-header {
     background-color: rgba(51, 51, 51, 0.5); /* 滚动时半透明背景 */
 }
@@ -123,6 +148,185 @@ nav ul li a:hover {
     display: block;
 }
 
+.theme-toggle {
+    margin-left: 20px; /* Add some spacing from the language switcher */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* Remove absolute positioning and z-index */
+}
+
+.theme-toggle .lightbulb-icon {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.theme-toggle .lightbulb-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Night mode styles */
+body.night-mode {
+    background-color: #222; /* Dark background for night mode */
+    background-image:
+        linear-gradient(0deg, #444 1px, transparent 1px), /* Darker grid lines */
+        linear-gradient(90deg, #444 1px, transparent 1px),
+        radial-gradient(circle at 10% 20%, #ffcc00 2%, transparent 2%), /* Yellow lightbulb for night mode */
+        radial-gradient(circle at 80% 90%, #ffcc00 2%, transparent 2%);
+    color: #eee; /* Light text for night mode */
+}
+
+body.night-mode header {
+    background-color: rgba(26, 26, 26, 0.7); /* Darker translucent background for header */
+}
+
+body.night-mode nav ul li a {
+    color: #ccc;
+}
+
+body.night-mode nav ul li a:hover {
+    color: #ffcc00;
+}
+
+body.night-mode .language-switcher {
+    color: #ccc;
+}
+
+body.night-mode .language-dropdown {
+    background-color: #1a1a1a;
+}
+
+body.night-mode .language-dropdown li {
+    color: #eee;
+}
+
+body.night-mode .language-dropdown li:hover {
+    background-color: #333;
+}
+
+body.night-mode .dropdown-content {
+    background-color: rgba(26, 26, 26, 0.7); /* Darker translucent background */
+}
+
+body.night-mode .dropdown-category {
+    background-color: rgba(51, 51, 51, 0.3); /* Darker category background */
+}
+
+body.night-mode .dropdown-category h4,
+body.night-mode .dropdown-category h5 {
+    color: #ffcc00;
+}
+
+body.night-mode .dropdown-category a {
+    color: #eee;
+}
+
+body.night-mode .dropdown-category a:hover {
+    background-color: #333;
+}
+
+body.night-mode .container {
+    background-color: rgba(34, 34, 34, 0.7); /* Darker translucent container */
+}
+
+body.night-mode h1,
+body.night-mode h2 {
+    color: #eee;
+}
+
+body.night-mode .hero-title .traditional-text,
+body.night-mode .hero-title .led-manufacturer-text {
+    color: #eee;
+}
+
+body.night-mode .hero-description {
+    color: #ccc;
+}
+
+body.night-mode .inquiry-card {
+    background-color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.night-mode .inquiry-card label {
+    color: #eee;
+}
+
+body.night-mode .inquiry-card input[type="text"],
+body.night-mode .inquiry-card input[type="email"],
+body.night-mode .inquiry-card textarea {
+    background-color: #444;
+    border: 1px solid #555;
+    color: #eee;
+}
+
+body.night-mode .inquiry-card input::placeholder,
+body.night-mode .inquiry-card textarea::placeholder {
+    color: #bbb;
+}
+
+body.night-mode .file-upload-box {
+    background-color: #444;
+    border: 2px dashed #666;
+}
+
+body.night-mode .file-upload-box p {
+    color: #bbb;
+}
+
+body.night-mode .submit-button {
+    background-color: #007bff;
+    color: white;
+}
+
+body.night-mode .submit-button:hover {
+    background-color: #0056b3;
+}
+
+body.night-mode .orange-dots {
+    background-color: #ffcc00; /* Yellow dots for night mode */
+}
+
+body.night-mode footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+body.night-mode .main-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+body.night-mode .main-footer h3 {
+    color: #eee;
+}
+
+body.night-mode .main-footer ul li a {
+    color: #ccc;
+}
+
+body.night-mode .main-footer ul li a:hover {
+    color: #ffcc00;
+}
+
+body.night-mode .main-footer .social-icon {
+    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(180deg); /* Adjust social icons for night mode */
+}
+
+body.night-mode .simple-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+body.night-mode .simple-footer a {
+    color: #ffcc00;
+}
+
+body.night-mode .simple-footer a:hover {
+    color: #ffe082;
+}
+
 /* 产品下拉菜单 */
 .nav ul li.dropdown {
     position: relative;
@@ -191,7 +395,7 @@ nav ul li a:hover {
 
 .container {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 20px auto 0; /* Changed margin-bottom to 0 */
     padding: 20px; /* 恢复内边距 */
     /* 修改container的背景色为半透明毛玻璃 */
     background-color: rgba(255, 255, 255, 0.4); /* 半透明白色 */
@@ -249,7 +453,6 @@ footer {
     height: 100%; /* 全高 */
     overflow: auto; /* 如果需要，启用滚动 */
     background-color: rgba(0,0,0,0.6); /* 黑色带透明度 */
-    display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.3s forwards;
@@ -260,20 +463,37 @@ footer {
     margin: auto; /* 居中 */
     padding: 20px;
     border: 1px solid #888;
+    width: 80%; /* 调整宽度 */
+    max-width: 700px; /* 最大宽度 */
+    max-height: 90%; /* 最大高度 */
+    overflow-y: auto; /* 内容溢出时滚动 */
+    border-radius: 8px; /* 轻微圆角 */
+    position: relative; /* 用于定位关闭按钮 */
 }
 
 .close-button {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute; /* 绝对定位 */
+    top: 10px; /* 距离顶部10px */
+    right: 10px; /* 距离右侧10px */
+    font-size: 24px; /* 调整字体大小 */
     font-weight: bold;
+    background-color: rgba(0,0,0,0.1); /* 背景色 */
+    border-radius: 50%; /* 圆形 */
+    width: 30px; /* 宽度 */
+    height: 30px; /* 高度 */
+    display: flex; /* 使用 flexbox 居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
 }
 
 .close-button:hover,
 .close-button:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;
+    background-color: rgba(0,0,0,0.2); /* 鼠标悬停时的背景色 */
 }
 
 @keyframes fadeIn {
@@ -584,47 +804,53 @@ footer {
 /* 非激活项的悬停效果 */
 .accordion-item:not(.active):hover {
     flex: 1.2; /* 非激活时悬停略微展开 */
-} 
+}
 
 .hero-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
-    text-align: left;
-    background-color: transparent;
+    justify-content: space-between;
+    align-items: flex-start; /* 顶部对齐 */
+    padding: 60px 40px; /* 调整内边距 */
+    background-color: #b5caff9c; /* 背景 */
     position: relative;
     overflow: hidden;
-    gap: 40px; /* 文本和图片之间的间距 */
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.hero-left-column {
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* 占据大部分宽度 */
+    gap: 30px; /* 文本和图片之间的间距 */
 }
 
 .hero-content {
-    flex: 1; /* 允许内容区域弹性伸缩 */
-    flex-basis: 60%; /* 优先占据 60% 宽度 */
-    z-index: 1;
-    padding-right: 20px; /* 为文本内容添加一些右边距 */
-    /* max-width: 50%; */ /* 移除此行，由 flex-basis 控制 */
+    color: #fff;
+    text-align: left;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 3.5rem; /* 更大的字体 */
-    font-weight: bold;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .hero-title .traditional-text {
-    color: #007bff; /* 蓝色 */
+    display: block;
+    font-weight: bold;
 }
 
 .hero-title .led-manufacturer-text {
-    color: #333; /* 黑色 */
+    display: block;
+    font-size: 1.5rem;
+    opacity: 0.8;
 }
 
 .hero-description {
     font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .hero-button {
@@ -665,6 +891,107 @@ footer {
     border-radius: 8px;
 }
 
+.image-gallery {
+    display: flex;
+    gap: 20px; /* 图片之间的间距 */
+    justify-content: flex-start;
+    flex-wrap: wrap; /* 允许图片换行 */
+}
+
+.image-gallery img {
+    width: calc(33.33% - 14px); /* 三张图片并排，考虑间距 */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    object-fit: cover; /* 确保图片覆盖区域 */
+}
+
+/* Inquiry Card Styles */
+.inquiry-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 350px; /* 根据图片调整宽度 */
+    flex-shrink: 0;
+    margin-left: 50px; /* 询价卡片与左侧内容的间距 */
+}
+
+.inquiry-form .form-group {
+    margin-bottom: 20px;
+}
+
+.inquiry-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form input[type="email"],
+.inquiry-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.inquiry-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.file-upload-group {
+    text-align: center;
+}
+
+.file-upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload-box:hover {
+    border-color: #888;
+}
+
+.file-upload-box .upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.file-upload-box p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.file-upload-box input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.inquiry-form .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.inquiry-form .submit-button:hover {
+    background-color: #32acf3;
+}
+
 .orange-dots {
     position: absolute;
     width: 10px;
@@ -691,7 +1018,7 @@ footer {
 .orange-dots.bottom-right {
     bottom: 50px;
     right: 50px;
-} 
+}
 
 /* Services Section */
 .services-grid {
@@ -786,4 +1113,237 @@ footer {
     .services-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* 新增的页脚样式 */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+.main-footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.main-footer .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.main-footer .footer-logo sup {
+    font-size: 0.6em;
+    vertical-align: super;
+    color: #ffcc00;
+}
+
+.main-footer p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.main-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-footer ul li {
+    margin-bottom: 10px;
+}
+
+.main-footer ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-footer ul li a:hover {
+    color: #007bff;
+}
+
+.main-footer h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.main-footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #007bff;
+}
+
+.main-footer .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.main-footer .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.main-footer .social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%); /* Make icons white */
+}
+
+.main-footer .social-icon:hover {
+    background-color: #007bff;
+}
+
+.main-footer .contact-newsletter input[type="text"],
+.main-footer .contact-newsletter input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.main-footer .contact-newsletter input::placeholder {
+    color: #aaa;
+}
+
+.main-footer .contact-newsletter button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.main-footer .contact-newsletter button:hover {
+    background-color: #0056b3;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-footer .footer-column {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main-footer .social-icons {
+        justify-content: center;
+    }
+}
+
+/* 新增的简洁页脚样式 */
+.simple-footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #333; /* 图二中的分隔线 */
+}
+
+.simple-footer p {
+    margin: 5px 0;
+}
+
+.simple-footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.simple-footer a:hover {
+    color: #007bff;
+} 
+
+/* Transitions for smooth theme change */
+body,
+header,
+nav ul li a,
+.language-switcher,
+.language-dropdown,
+.language-dropdown li,
+.dropdown-content,
+.dropdown-category,
+.dropdown-category h4,
+.dropdown-category h5,
+.dropdown-category a,
+.container,
+h1,
+h2,
+.hero-title .traditional-text,
+.hero-title .led-manufacturer-text,
+.hero-description,
+.inquiry-card,
+.inquiry-card label,
+.inquiry-card input[type="text"],
+.inquiry-card input[type="email"],
+.inquiry-card textarea,
+.file-upload-box,
+.file-upload-box p,
+.submit-button,
+.orange-dots,
+footer,
+.main-footer,
+.main-footer h3,
+.main-footer ul li a,
+.main-footer .social-icon,
+.simple-footer,
+.simple-footer a {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease; /* Apply transitions to all relevant properties */
+} 
+
+@keyframes rotateLightbulb {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(0deg); }
+}
+.rotate-animation {
+    animation: rotateLightbulb 0.6s ease-in-out;
 } 

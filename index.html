@@ -8,17 +8,18 @@
 </head>
 <body>
     <a href="#" id="quick-customize-button-float" class="quick-customize-button" data-lang-key="quickCustomizeButton">快速定制</a>
+    <a href="#customize-card" class="floating-action-button" data-lang-key="heroButton">现在发送您的申请 <span class="arrow-icon">→</span></a>
     <header>
         <nav>   
             <div class="logo" data-lang-key="logoText">深圳市日不落灯光</div>
             <ul>
                 <li><a href="index.html#home" data-lang-key="navHome">主页</a></li>
                 <li class="dropdown">
-                    <a href="index.html#products" class="dropbtn" data-lang-key="navProducts">产品</a>
+                    <a href="product.html" class="dropbtn" data-lang-key="navProducts">产品</a>
                     <div class="dropdown-content">
                         <div class="dropdown-category">
                             <h4 data-lang-key="ledStripCategory">LED灯带</h4>
-                            <a href="index.html#products" data-lang-key="singleColorSeries">单色系列</a>
+                            <a href="product01.html" data-lang-key="singleColorSeries">单色系列</a>
                             <a href="index.html#products" data-lang-key="customWhiteSeries">可定制的白色系列</a>
                             <a href="index.html#products" data-lang-key="onOffTunableWhiteSeries">开启/关闭可调白色系列</a>
                             <a href="index.html#products" data-lang-key="rgbxColorChangingSeries">RGBX变色系列</a>
@@ -89,22 +90,52 @@
                     <li data-lang="ja">日本語 (Japanese)</li>
                 </ul>
             </div> 
-        
+            <div class="theme-toggle" id="theme-toggle">
+                <img src="image/灯泡.png" alt="Lightbulb" class="lightbulb-icon">
+            </div>
         </nav>
     </header>
 
     <div class="container">
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="traditional-text" data-lang-key="traditionalText">Entertainment section</span>
-                    <span class="led-manufacturer-text" data-lang-key="ledManufacturerText">可编程的LED灯条和定制灯具的制造商</span>
-                </h1>
-                <p class="hero-description" data-lang-key="heroDescription">Manufacturer of programmable LED strips and custom fixtures。</p>
-                <a href="#customize-modal" class="hero-button" data-lang-key="heroButton">现在发送您的申请 <span class="arrow-icon">→</span></a>
+            <div class="hero-left-column">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="traditional-text" data-lang-key="traditionalText">定制 LED</span>
+                        <span class="led-manufacturer-text" data-lang-key="ledManufacturerText">灯条既快速又简单。</span>
+                    </h1>
+                    <p class="hero-description" data-lang-key="heroDescription">无论您需要什么样的LED灯条。特别是，我们拥有一支经验丰富的15人以上的研发团队，功能齐全的实验室，以及先进的生产设备。我们可以在1周内提供产品设计图纸，在3周内提供样品。</p>
+                </div>
+                <div class="image-gallery">
+                    <img src="image/790dc3da8ce469e192.jpg" alt="LED 灯条生产">
+                    <img src="image/a5c029a67ed77b99f4.jpg" alt="LED 灯条测试">
+                    <img src="image/IMG_20240825_094406.jpg" alt="LED 灯条组装">
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="image/790dc3da8ce469e192.jpg" alt="LED 灯条">
+            <div class="inquiry-card" id="customize-card">
+                <div class="inquiry-form">
+                    <div class="form-group">
+                        <label for="name">*您的姓名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">*您的电子邮件地址</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">消息</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div class="form-group file-upload-group">
+                        <div class="file-upload-box">
+                            <img src="image/信封.png" alt="上传文件图标" class="upload-icon">
+                            <p>单击或拖动文件到此区域以上传它。</p>
+                            <p>您最多可以上传 10 个文件。</p>
+                            <input type="file" id="file-upload" name="files[]" multiple accept=".jpg,.jpeg,.png,.pdf">
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-button">询价</button>
+                </div>
             </div>
             <div class="orange-dots top-left"></div>
             <div class="orange-dots top-right"></div>
@@ -224,8 +255,70 @@
         <!-- Removed product cases section as it is now in product-cases.html -->
     </div>
 
-    <footer>
-        <p data-lang-key="footer">© 2025 深圳市日不落灯光. 。</p>
+    <div class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column company-info">
+                <div class="footer-logo">
+                    Led<sup>*</sup>
+                </div>
+                <p> 以实惠的价格和快速的交货提供定制的 LED 灯条。提供免费样品。</p>
+                <ul>
+                    <li>电子邮件：</li>
+                    <li>电话：+86 - 755 1234 1234</li>
+                    <li>地址：</li>
+                </ul>
+                <div class="social-icons">
+                    
+                    <a href="#" class="social-icon"><img src="image/youtube.png" alt="YouTube"></a>
+                    <a href="#" class="social-icon"><img src="image/脸书-copy.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="image/twiter.png" alt="Twitter"></a>
+                   
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>货物</h3>
+                <ul>
+                    <li><a href="#">单色 LED 灯条</a></li>
+                    <li><a href="#">可调白光 LED 灯条</a></li>
+                    <li><a href="#">RGBX 彩色 LED 灯条</a></li>
+                    <li><a href="#">数字 RGBX LED 灯条</a></li>
+                    <li><a href="#">新型 ErP LED 灯条</a></li>
+                    <li><a href="#">COB LED灯条</a></li>
+                    <li><a href="#">超长 CC LED 灯条</a></li>
+                    <li><a href="#">高效 LED 灯条</a></li>
+                    <li><a href="#">Flex 霓虹灯</a></li>
+                    <li><a href="#">洗墙灯 Flex PU</a></li>
+                    <li><a href="#">自由弯曲洗涤器</a></li>
+                    <li><a href="#">LED面板</a></li>
+                    <li><a href="#">即插即用 LED 灯条</a></li>
+                    <li><a href="#">DMX LED灯带</a></li>
+                    <li><a href="#">LED WS2812B条</a></li>
+                    <li><a href="#">LY8808B LED 灯条</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>源</h3>
+                <ul>
+                    <li><a href="#">下载</a></li>
+                    <li><a href="#">视频</a></li>
+                    <li><a href="#">常见问题解答</a></li>
+                    <li><a href="#">块</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-newsletter">
+                <h3>通讯</h3>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="*您的姓名" required>
+                    <input type="email" placeholder="*您的电子邮件地址" required>
+                    <button type="submit">订阅我们的时事通讯</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p>© 2025  Sun Lighting Co., Ltd. 版权所有</p>
+        <p>隐私策略 条款和条件</p>
     </footer>
 
     <div id="customize-modal" class="modal-overlay">
@@ -236,7 +329,7 @@
                 <div class="form-group">
                     <label for="modal-name" data-lang-key="modalNameLabel">姓名 *</label>
                     <input type="text" id="modal-name" name="name" required>
-                </div>
+                </div>a
                 <div class="form-group">
                     <label for="modal-email" data-lang-key="modalEmailLabel">电子邮件 *</label>
                     <input type="email" id="modal-email" name="email" required>
@@ -255,8 +348,10 @@
             </form>
         </div>
     </div>
-    <script src="js/main.js"></script>
+
     <div id="app"></div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>

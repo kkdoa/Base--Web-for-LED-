@@ -14,11 +14,11 @@
             <ul>
                 <li><a href="index.html#home" data-lang-key="navHome">主页</a></li>
                 <li class="dropdown">
-                    <a href="index.html#products" class="dropbtn" data-lang-key="navProducts">产品</a>
+                    <a href="product.html" class="dropbtn" data-lang-key="navProducts">产品</a>
                     <div class="dropdown-content">
                         <div class="dropdown-category">
                             <h4 data-lang-key="ledStripCategory">LED灯带</h4>
-                            <a href="index.html#products" data-lang-key="singleColorSeries">单色系列</a>
+                            <a href="product01.html" data-lang-key="singleColorSeries">单色系列</a>
                             <a href="index.html#products" data-lang-key="customWhiteSeries">可定制的白色系列</a>
                             <a href="index.html#products" data-lang-key="onOffTunableWhiteSeries">开启/关闭可调白色系列</a>
                             <a href="index.html#products" data-lang-key="rgbxColorChangingSeries">RGBX变色系列</a>
@@ -89,7 +89,9 @@
                     <li data-lang="ja">日本語 (Japanese)</li>
                 </ul>
             </div>
-           
+            <div class="theme-toggle" id="theme-toggle">
+                <img src="image/太阳.png" alt="Lightbulb" class="lightbulb-icon">
+            </div>
         </nav>
     </header>
 
@@ -112,8 +114,70 @@
             <p data-lang-key="visionText">我们的愿景是成为XXXX行业的领导者，为客户提供最优质的解决方案。</p>
         </section>
     </div>
-    <footer>
-        <p data-lang-key="footer">© 2025 深圳市日不落灯光. 。</p>
+    <div class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column company-info">
+                <div class="footer-logo">
+                    LED<sup>*</sup>
+                </div>
+                <p>LED 以实惠的价格和快速的交货提供定制的 LED 灯条。提供免费样品。</p>
+                <ul>
+                    <li>电子邮件：</li>
+                    <li>电话：+86 - 755 1234 1234</li>
+                    <li>地址：</li>
+                </ul>
+                <div class="social-icons">
+                    
+                    <a href="#" class="social-icon"><img src="image/youtube.png" alt="YouTube"></a>
+                    <a href="#" class="social-icon"><img src="image/脸书-copy.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="image/twiter.png" alt="Twitter"></a>
+                    
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>货物</h3>
+                <ul>
+                    <li><a href="#">单色 LED 灯条</a></li>
+                    <li><a href="#">可调白光 LED 灯条</a></li>
+                    <li><a href="#">RGBX 彩色 LED 灯条</a></li>
+                    <li><a href="#">数字 RGBX LED 灯条</a></li>
+                    <li><a href="#">新型 ErP LED 灯条</a></li>
+                    <li><a href="#">COB LED灯条</a></li>
+                    <li><a href="#">超长 CC LED 灯条</a></li>
+                    <li><a href="#">高效 LED 灯条</a></li>
+                    <li><a href="#">Flex 霓虹灯</a></li>
+                    <li><a href="#">洗墙灯 Flex PU</a></li>
+                    <li><a href="#">自由弯曲洗涤器</a></li>
+                    <li><a href="#">LED面板</a></li>
+                    <li><a href="#">即插即用 LED 灯条</a></li>
+                    <li><a href="#">DMX LED灯带</a></li>
+                    <li><a href="#">LED WS2812B条</a></li>
+                    <li><a href="#">LY8808B LED 灯条</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>源</h3>
+                <ul>
+                    <li><a href="#">下载</a></li>
+                    <li><a href="#">视频</a></li>
+                    <li><a href="#">常见问题解答</a></li>
+                    <li><a href="#">块</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-newsletter">
+                <h3>通讯</h3>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="*您的姓名" required>
+                    <input type="email" placeholder="*您的电子邮件地址" required>
+                    <button type="submit">订阅我们的时事通讯</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p>© 2025Lighting Co., Ltd. 版权所有</p>
+        <p>隐私策略 条款和条件</p>
     </footer>
     <script src="js/main.js"></script>
     <div id="app"></div>

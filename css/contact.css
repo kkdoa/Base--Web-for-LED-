@@ -1,42 +1,65 @@
+/* contact.css - 专用于“联系我们”页面的样式 */
+
 .cards-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+    /* 卡片容器样式：使用Flexbox布局，卡片之间有间距，并允许换行，适应不同屏幕尺寸。 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-around; /* 子元素周围有空间，均匀分布 */
+    gap: 20px; /* 子元素之间的间距 */
+    padding: 20px; /* 内边距 20px */
+    flex-wrap: wrap; /* 允许项目换行 */
+    margin-top: 30px; /* 顶部外边距 30px */
 }
 
 .contact-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    flex: 1;
-    min-width: 450px; /* Adjust as needed */
-    box-sizing: border-box;
+    /* 联系卡片样式：白色背景，圆角，阴影，Flex伸缩性，最小宽度和盒模型。 */
+    background-color: #fff; /* 白色背景 */
+    border-radius: 8px; /* 8px 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    padding: 30px; /* 内边距 30px */
+    flex: 1; /* 占据可用空间 */
+    min-width: 450px; /* 最小宽度 450px */
+    box-sizing: border-box; /* 盒模型为 border-box */
+}
+
+body.night-mode .contact-card {
+    /* 夜间模式下联系卡片样式：深色背景，移除阴影。 */
+    background-color: #333; /* 深色背景 */
+    box-shadow: none; /* 移除阴影 */
 }
 
 .contact-card h3 {
-    color: #333;
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    /* 联系卡片标题样式：深色文本，字体大小和底部外边距。 */
+    color: #333; /* 深色文本 */
+    font-size: 1.8em; /* 字体大小 1.8em */
+    margin-bottom: 10px; /* 底部外边距 10px */
+}
+
+body.night-mode .contact-card h3,
+body.night-mode .contact-card h4,
+body.night-mode .contact-card-info p,
+body.night-mode .contact-card-info strong,
+body.night-mode .contact-card-form h3 {
+    /* 夜间模式下联系卡片内部文本和标题样式：浅色文本。 */
+    color: #eee; /* 浅色文本 */
 }
 
 .contact-card h4 {
-    color: #555;
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    /* 联系卡片副标题样式：中灰色文本，字体大小和底部外边距。 */
+    color: #555; /* 中灰色文本 */
+    font-size: 1.2em; /* 字体大小 1.2em */
+    margin-bottom: 20px; /* 底部外边距 20px */
 }
 
 .contact-card-info p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    line-height: 1.6;
+    /* 联系卡片信息段落样式：设置底部外边距，字体大小和行高。 */
+    margin-bottom: 15px; /* 底部外边距 15px */
+    font-size: 1.1em; /* 字体大小 1.1em */
+    line-height: 1.6; /* 行高 1.6 倍 */
 }
 
 .contact-card-info strong {
-    color: #333;
+    /* 联系卡片信息加粗文本样式：深色文本。 */
+    color: #333; /* 深色文本 */
 }
 
 .social-icons {
@@ -95,8 +118,9 @@
 }
 
 .contact-card-form h3 {
-    text-align: center;
-    margin-bottom: 25px;
+    /* 联系卡片表单标题样式：文本居中对齐，设置底部外边距。 */
+    text-align: center; /* 文本居中对齐 */
+    margin-bottom: 25px; /* 底部外边距 25px */
 }
 
 .inquiry-form .form-group {
@@ -108,6 +132,10 @@
     margin-bottom: 8px;
     font-weight: normal;
     color: #555;
+}
+
+body.night-mode .inquiry-form label {
+    color: #bbb; /* Lighter label for night mode */
 }
 
 .inquiry-form input[type="text"],
@@ -124,6 +152,14 @@
 .inquiry-form textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+body.night-mode .inquiry-form input[type="text"],
+body.night-mode .inquiry-form input[type="email"],
+body.night-mode .inquiry-form textarea {
+    background-color: #555; /* Darker background for night mode */
+    color: #eee; /* Lighter text color */
+    border-color: #666;
 }
 
 .file-upload-group {
@@ -146,6 +182,11 @@
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+body.night-mode .file-upload-label {
+    background-color: #444; /* Darker background for night mode */
+    border-color: #555;
+}
+
 .file-upload-label:hover {
     border-color: #a0a0a0;
     background-color: #f0f0f0;
@@ -158,6 +199,10 @@
     opacity: 0.7;
 }
 
+body.night-mode .upload-icon {
+    filter: invert(1); /* Invert color to make it white in night mode */
+}
+
 .file-upload-label span {
     font-size: 1.1em;
     color: #666;
@@ -167,6 +212,10 @@
 .file-upload-note {
     font-size: 0.9em;
     color: #999;
+}
+
+body.night-mode .file-upload-note {
+    color: #aaa; /* Lighter note for night mode */
 }
 
 .inquiry-form .submit-button {

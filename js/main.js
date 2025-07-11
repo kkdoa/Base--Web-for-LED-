@@ -1,49 +1,3 @@
-if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
-    const modalOverlay = document.getElementById('customize-modal');
-    const closeButton = modalOverlay.querySelector('.close-button');
-
-    // Select both customization buttons
-    const navbarCustomizeButton = document.getElementById('navbar-customize-button');
-    const quickCustomizeButtonFloat = document.getElementById('quick-customize-button-float');
-
-    function openModal() {
-        modalOverlay.style.display = 'flex';
-        modalOverlay.classList.remove('hidden');
-    }
-
-    function closeModal() {
-        modalOverlay.classList.add('hidden');
-        modalOverlay.addEventListener('animationend', function handler() {
-            modalOverlay.style.display = 'none';
-            modalOverlay.removeEventListener('animationend', handler);
-        });
-    }
-
-    // Add event listener for the navbar customization button
-    if (navbarCustomizeButton) {
-        navbarCustomizeButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent page jump
-            openModal();
-        });
-    }
-
-    // Add event listener for the floating quick customization button
-    if (quickCustomizeButtonFloat) {
-        quickCustomizeButtonFloat.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent page jump
-            openModal();
-        });
-    }
-
-    closeButton.addEventListener('click', closeModal);
-
-    modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay) {
-            closeModal();
-        }
-    });
-}
-
 // Get a reference to the header element
 const header = document.querySelector('header');
 
@@ -59,38 +13,41 @@ function handleScroll() {
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
 
+// Language data for internationalization. Each key represents a language code (e.g., 'en' for English, 'zh-CN' for Simplified Chinese),
+// and its value is an object containing key-value pairs for text snippets used throughout the website.
+// The `data-lang-key` attribute in HTML elements is used to dynamically update content based on the selected language.
 const langData = {
-    'zh-CN': {
-       // 'homeTitle': '欢迎来到我们的公司',
-      //  'homeText': '这里是您公司的简介或Slogan。旨在提供高质量的产品和卓越的服务。',
-      //  'productsTitle': '我们的产品',
-       // 'productsText': '在这里，您可以介绍您的主要产品系列。可以添加产品图片、描述和链接。',
-      //  'product1Title': '产品系列一',
-      //  'product1Text': '这是产品系列一的详细描述。介绍其特点和优势。',
-     //  'product2Title': '产品系列二',
-     //  'product2Text': '这是产品系列二的详细描述。介绍其特点和优势。',
-       // 'aboutTitle': '关于我们',
-        //'aboutText': '在这里，您可以介绍公司的历史、愿景、使命和核心价值观。可以添加团队照片和公司里程碑。',
-        //'historyTitle': '公司历史',
-       // 'historyText': '您的公司成立于XXXX年，一直致力于XXXX领域。多年来，我们取得了许多成就。',
-       // 'visionTitle': '公司愿景',
-       // 'visionText': '我们的愿景是成为XXXX行业的领导者，为客户提供最优质的解决方案。',
-       // 'contactTitle': '联系我们',
-       // 'contactText': '如果您有任何疑问或需要帮助，请随时联系我们。',
-       // 'email': '邮箱：your_email@example.com',
-       // 'phone': '电话：+86 XXXX-XXXXXXX',
-       // 'address': '地址：您的公司地址',
-       // 'footer': '',
-       // 'navHome': '主页',
-       // 'navProducts': '产品',
-       // 'navAbout': '关于我们',
-       // 'navContact': '联系我们',
-       // 'navProductCases': '产品案例',
-       // 'langDisplay': '中文',
-       // 'carouselTitle': '中国风光', // Add for carousel
-       // 'carouselDescription': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut mauris euismod, bibendum tellus vel, efficitur tellus.', // Add for carousel
-       // 'learnMoreButton': '了解更多' // Add for carousel
-    },
+    // 'zh-CN': {
+    //    // 'homeTitle': '欢迎来到我们的公司',
+    //   //  'homeText': '这里是您公司的简介或Slogan。旨在提供高质量的产品和卓越的服务。',
+    //   //  'productsTitle': '我们的产品',
+    //    // 'productsText': '在这里，您可以介绍您的主要产品系列。可以添加产品图片、描述和链接。',
+    //   //  'product1Title': '产品系列一',
+    //   //  'product1Text': '这是产品系列一的详细描述。介绍其特点和优势。',
+    //  //  'product2Title': '产品系列二',
+    //  //  'product2Text': '这是产品系列二的详细描述。介绍其特点和优势。',
+    //    // 'aboutTitle': '关于我们',
+    //     //'aboutText': '在这里，您可以介绍公司的历史、愿景、使命和核心价值观。可以添加团队照片和公司里程碑。',
+    //     //'historyTitle': '公司历史',
+    //    // 'historyText': '您的公司成立于XXXX年，一直致力于XXXX领域。多年来，我们取得了许多成就。',
+    //    // 'visionTitle': '公司愿景',
+    //    // 'visionText': '我们的愿景是成为XXXX行业的领导者，为客户提供最优质的解决方案。',
+    //    // 'contactTitle': '联系我们',
+    //    // 'contactText': '如果您有任何疑问或需要帮助，请随时联系我们。',
+    //    // 'email': '邮箱：your_email@example.com',
+    //    // 'phone': '电话：+86 XXXX-XXXXXXX',
+    //    // 'address': '地址：您的公司地址',
+    //    // 'footer': '',
+    //    // 'navHome': '主页',
+    //    // 'navProducts': '产品',
+    //    // 'navAbout': '关于我们',
+    //    // 'navContact': '联系我们',
+    //    // 'navProductCases': '产品案例',
+    //    // 'langDisplay': '中文',
+    //    // 'carouselTitle': '中国风光', // Add for carousel
+    //    // 'carouselDescription': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut mauris euismod, bibendum tellus vel, efficitur tellus.', // Add for carousel
+    //    // 'learnMoreButton': '了解更多' // Add for carousel
+    // },
     'en': {
         'homeTitle': 'Welcome to Our Company',
         'homeText': 'This is your company\'s introduction or slogan. Aiming to provide high-quality products and excellent services.',
@@ -328,6 +285,19 @@ languageDropdown.querySelectorAll('li').forEach(item => {
 
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage('zh-CN'); // Default language
+    const quickCustomizeButton = document.getElementById('quick-customize-button-float');
+    const floatingActionButton = document.querySelector('.floating-action-button');
+    const customizeCard = document.getElementById('customize-card');
+
+    if (floatingActionButton && customizeCard) {
+        floatingActionButton.addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止默认的跳转行为
+            customizeCard.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+
 });
 
 
@@ -349,7 +319,6 @@ setLanguage('zh-CN');
 
 
 // Carousel Functionality
-let currentIndex = 0;
 const carousel = document.querySelector('.product-carousel-container');
 const carouselInner = document.querySelector('.carousel-inner');
 const prevButton = document.querySelector('.carousel-button.prev');
@@ -358,105 +327,110 @@ const carouselTitle = document.querySelector('.info-text-overlay h1');
 const carouselDescription = document.querySelector('.info-text-overlay p');
 const carouselBackground = document.querySelector('.carousel-background');
 
-const images = [
-    { src: 'image/IMG_20240825_094406.jpg', carouselTitle: '中国风光 06', description: '通过数字媒介创造的视觉奇观。' },
-    { src: 'image/凌波丽.jpg', carouselTitle: '中国风光 07', description: '通过数字媒介创造的视觉奇观。' },
-    { src: 'image/明日香.jpg', carouselTitle: '中国风光 08', description: '通过数字媒介创造的视觉奇观。' },
-    { src: 'image/星野爱.jpg', carouselTitle: '中国风光 09', description: '通过数字媒介创造的视觉奇观。' },
-    { src: 'image/米山舞.jpg', carouselTitle: '中国风光 10', description: '通过数字媒介创造的视觉奇观。' }
-];
+// Check if carousel elements exist before initializing functionality
+if (carousel && carouselInner && prevButton && nextButton && carouselTitle && carouselDescription && carouselBackground) {
+    let currentIndex = 0;
 
-function createCarouselItem(image) {
-    const item = document.createElement('div');
-    item.classList.add('carousel-item');
-    const img = document.createElement('img');
-    img.src = image.src;
-    img.alt = image.carouselTitle;
-    item.appendChild(img);
-    return item;
-}
+    const images = [
+        { src: 'image/IMG_20240825_094406.jpg', carouselTitle: '中国风光 06', description: '通过数字媒介创造的视觉奇观。' },
+        { src: 'image/凌波丽.jpg', carouselTitle: '中国风光 07', description: '通过数字媒介创造的视觉奇观。' },
+        { src: 'image/明日香.jpg', carouselTitle: '中国风光 08', description: '通过数字媒介创造的视觉奇观。' },
+        { src: 'image/星野爱.jpg', carouselTitle: '中国风光 09', description: '通过数字媒介创造的视觉奇观。' },
+        { src: 'image/米山舞.jpg', carouselTitle: '中国风光 10', description: '通过数字媒介创造的视觉奇观。' }
+    ];
 
-// Populate carousel
-images.forEach(image => {
-    carouselInner.appendChild(createCarouselItem(image));
-});
-
-const carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
-const totalItems = carouselItems.length;
-
-function updateInfoOverlay() {
-    const currentImage = images[currentIndex];
-    carouselTitle.textContent = currentImage.carouselTitle;
-    carouselDescription.textContent = currentImage.description;
-}
-
-function updateCarousel() {
-    // Update background image
-    if (carouselBackground && images[currentIndex]) {
-        carouselBackground.style.backgroundImage = `url('${images[currentIndex].src}')`;
+    function createCarouselItem(image) {
+        const item = document.createElement('div');
+        item.classList.add('carousel-item');
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.carouselTitle;
+        item.appendChild(img);
+        return item;
     }
 
-    carouselItems.forEach((item, index) => {
-        let offset = index - currentIndex;
-        if (offset > totalItems / 2) {
-            offset -= totalItems;
-        } else if (offset < -totalItems / 2) {
-            offset += totalItems;
-        }
-        
-        const scale = 1 - Math.abs(offset) * 0.15; // Adjusted scale for a more pronounced effect
-        const translateX = offset * 16; // Changed to 16vw for better responsive spacing
-        const rotateY = offset * 15; // Slightly increased rotation
-        const zIndex = totalItems - Math.abs(offset); // Corrected z-index for layering
-        const opacity = 1 - Math.abs(offset) * 0.3; // Adjusted opacity for a smoother fade
-
-        item.style.transform = `translateX(${translateX}vw) rotateY(${rotateY}deg) scale(${scale})`;
-        item.style.zIndex = zIndex;
-        item.style.opacity = opacity;
-        item.style.position = 'absolute'; // Ensure absolute positioning for layering
-        item.style.left = '50%';
-        item.style.top = '50%';
-        item.style.transform += 'translate(-50%, -50%)'; // Center the item after transformations
+    // Populate carousel
+    images.forEach(image => {
+        carouselInner.appendChild(createCarouselItem(image));
     });
-    updateInfoOverlay();
-}
 
-function goToSlide(index) {
-    currentIndex = (index + totalItems) % totalItems;
+    const carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
+    const totalItems = carouselItems.length;
+
+    function updateInfoOverlay() {
+        const currentImage = images[currentIndex];
+        carouselTitle.textContent = currentImage.carouselTitle;
+        carouselDescription.textContent = currentImage.description;
+    }
+
+    function updateCarousel() {
+        // Update background image
+        if (carouselBackground && images[currentIndex]) {
+            carouselBackground.style.backgroundImage = `url('${images[currentIndex].src}')`;
+        }
+
+        carouselItems.forEach((item, index) => {
+            let offset = index - currentIndex;
+            if (offset > totalItems / 2) {
+                offset -= totalItems;
+            } else if (offset < -totalItems / 2) {
+                offset += totalItems;
+            }
+            
+            const scale = 1 - Math.abs(offset) * 0.15; // Adjusted scale for a more pronounced effect
+            const translateX = offset * 16; // Changed to 16vw for better responsive spacing
+            const rotateY = offset * 15; // Slightly increased rotation
+            const zIndex = totalItems - Math.abs(offset); // Corrected z-index for layering
+            const opacity = 1 - Math.abs(offset) * 0.3; // Adjusted opacity for a smoother fade
+
+            item.style.transform = `translateX(${translateX}vw) rotateY(${rotateY}deg) scale(${scale})`;
+            item.style.zIndex = zIndex;
+            item.style.opacity = opacity;
+            item.style.position = 'absolute'; // Ensure absolute positioning for layering
+            item.style.left = '50%';
+            item.style.top = '50%';
+            item.style.transform += 'translate(-50%, -50%)'; // Center the item after transformations
+        });
+        updateInfoOverlay();
+    }
+
+    function goToSlide(index) {
+        currentIndex = (index + totalItems) % totalItems;
+        updateCarousel();
+    }
+
+    function goToNext() {
+        goToSlide(currentIndex + 1);
+    }
+
+    function goToPrev() {
+        goToSlide(currentIndex - 1);
+    }
+
+    prevButton.addEventListener('click', goToPrev);
+    nextButton.addEventListener('click', goToNext);
+
+    // Initial load
     updateCarousel();
+
+    // Auto-scrolling
+    let autoScrollInterval;
+    function startAutoScroll() {
+        stopAutoScroll(); // Clear any existing interval
+        autoScrollInterval = setInterval(goToNext, 3000); // Change slide every 3 seconds
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    // Pause auto-scroll on hover
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+
+    // Start auto-scroll on initial load
+    startAutoScroll();
 }
-
-function goToNext() {
-    goToSlide(currentIndex + 1);
-}
-
-function goToPrev() {
-    goToSlide(currentIndex - 1);
-}
-
-prevButton.addEventListener('click', goToPrev);
-nextButton.addEventListener('click', goToNext);
-
-// Initial load
-updateCarousel();
-
-// Auto-scrolling
-let autoScrollInterval;
-function startAutoScroll() {
-    stopAutoScroll(); // Clear any existing interval
-    autoScrollInterval = setInterval(goToNext, 3000); // Change slide every 3 seconds
-}
-
-function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
-}
-
-// Pause auto-scroll on hover
-carousel.addEventListener('mouseenter', stopAutoScroll);
-carousel.addEventListener('mouseleave', startAutoScroll);
-
-// Start auto-scroll on initial load
-startAutoScroll();
 
 // Accordion Gallery functionality
 const accordionItems = document.querySelectorAll('.accordion-item');
@@ -477,18 +451,133 @@ if (accordionItems.length > 0) {
 } 
 
 // Vue 3 应用
-const { createApp } = Vue;
+//const { createApp } = Vue;
 
-createApp({
-    data() {
-        return {
-            message: 'Hello Vue 3!'
+//createApp({
+//    data() {
+ //       return {
+ //           message: 'Hello Vue 3!'
+ //       }
+//    },
+//    template: `
+ //       <div style="text-align: center; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+ //           <h2>{{ message }}</h2>
+ //           <p>这是一个从 Vue 3 渲染的简单消息！</p>
+  //      </div>
+    
+//}).mount('#app'); 
+
+
+// Check for saved theme preference and update icon
+document.addEventListener('DOMContentLoaded', () => {
+
+    const modalOverlay = document.getElementById('customize-modal');
+    console.log('Modal Overlay Element:', modalOverlay); // DEBUG
+    const closeButton = modalOverlay ? modalOverlay.querySelector('.close-button') : null; // Check for null before querySelector
+    console.log('Close Button Element:', closeButton); // DEBUG
+
+    // Select both customization buttons
+    const navbarCustomizeButton = document.getElementById('navbar-customize-button');
+    console.log('Navbar Customize Button Element:', navbarCustomizeButton); // DEBUG
+    const quickCustomizeButtonFloat = document.getElementById('quick-customize-button-float');
+    console.log('Quick Customize Button Element:', quickCustomizeButtonFloat); // DEBUG
+
+    function openModal() {
+        console.log('openModal function called.'); // DEBUG
+        if (modalOverlay) {
+            modalOverlay.style.display = 'flex';
+            modalOverlay.classList.remove('hidden');
         }
-    },
-    template: `
-        <div style="text-align: center; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <h2>{{ message }}</h2>
-            <p>这是一个从 Vue 3 渲染的简单消息！</p>
-        </div>
-    `
-}).mount('#app'); 
+    }
+
+    function closeModal() {
+        console.log('closeModal function called.'); // DEBUG
+        if (modalOverlay) {
+            modalOverlay.classList.add('hidden');
+            modalOverlay.addEventListener('animationend', function handler() {
+                modalOverlay.style.display = 'none';
+                modalOverlay.removeEventListener('animationend', handler);
+            });
+        }
+    }
+
+    // Add event listener for the navbar customization button
+    if (navbarCustomizeButton) {
+        navbarCustomizeButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent page jump
+            console.log('Navbar Customize Button clicked.'); // DEBUG
+            openModal();
+        });
+    }
+
+    // Add event listener for the floating quick customization button
+    if (quickCustomizeButtonFloat) {
+        quickCustomizeButtonFloat.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent page jump
+            console.log('Quick Customize Button clicked.'); // DEBUG
+            openModal();
+        });
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                console.log('Modal Overlay clicked (outside content).'); // DEBUG
+                closeModal();
+            }
+        });
+    }
+
+    // Theme toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    console.log('Theme Toggle Element:', themeToggle); // DEBUG
+    const body = document.body;
+    const lightbulbIcon = document.querySelector('#theme-toggle .lightbulb-icon');
+    console.log('Lightbulb Icon Element:', lightbulbIcon); // DEBUG
+
+    // Function to update the lightbulb icon based on theme
+    function updateLightbulbIcon() {
+        if (body.classList.contains('night-mode')) {
+            lightbulbIcon.src = 'image/月亮.png';
+            lightbulbIcon.alt = 'Moon';
+        } else {
+            lightbulbIcon.src = 'image/太阳.png';
+            lightbulbIcon.alt = 'Sun';
+        }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'night') {
+        body.classList.add('night-mode');
+    }
+    updateLightbulbIcon(); // Set initial icon based on theme
+    console.log('DOM Content Loaded. Initial theme set.'); // DEBUG
+
+    if (themeToggle) { // Ensure themeToggle exists before adding event listener
+        themeToggle.addEventListener('click', () => {
+            console.log('Theme Toggle clicked.'); // DEBUG
+            body.classList.toggle('night-mode');
+
+            if (body.classList.contains('night-mode')) {
+                localStorage.setItem('theme', 'night');
+            } else {
+                localStorage.setItem('theme', 'day');
+            }
+
+            updateLightbulbIcon(); // Update icon after theme change
+
+            // Add and remove a class to trigger the animation
+            lightbulbIcon.classList.add('rotate-animation');
+            lightbulbIcon.addEventListener('animationend', function handler() {
+                lightbulbIcon.classList.remove('rotate-animation');
+            }, { once: true });
+        });
+    } else {
+        console.error('Theme toggle element not found!'); // DEBUG
+    }
+
+}); 
